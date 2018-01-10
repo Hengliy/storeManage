@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="entity.VIngoodsEntity" table="v_ingoods" schema="store">
+        <id name="id">
+            <column name="id" sql-type="smallint(5) unsigned"/>
+        </id>
+        <property name="goodsName">
+            <column name="goods_name" sql-type="char(15)" length="15" not-null="true"/>
+        </property>
+        <property name="kindName">
+            <column name="kind_name" sql-type="char(10)" length="10" />
+        </property>
+        <property name="productorName">
+            <column name="productor_name" sql-type="varchar(10)" length="10" />
+        </property>
+        <property name="count">
+            <column name="count" sql-type="int(10) unsigned" />
+        </property>
+        <property name="inprice">
+            <column name="inprice" sql-type="decimal(6,2)" precision="6" scale="2" />
+        </property>
+        <property name="indate">
+            <column name="indate" sql-type="datetime" />
+        </property>
+        <property name="username">
+            <column name="username" sql-type="varchar(10)" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

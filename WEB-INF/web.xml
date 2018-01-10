@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!--
+    <servlet>
+        <servlet-name>addGoods</servlet-name>
+        <servlet-class>servlet.addGoodsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addGoods</servlet-name>
+        <url-pattern>/servlet/addGoodsServlet</url-pattern>
+    </servlet-mapping>
+-->
+
+
+    <!--
+    <servlet>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <servlet-class>View.WelcomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <url-pattern>Welcome</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ErrorServlet</servlet-name>
+        <servlet-class>View.ErrorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ErrorServlet</servlet-name>
+        <url-pattern>Error</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>Controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>Login</url-pattern>
+    </servlet-mapping>
+    -->
+
+</web-app>
