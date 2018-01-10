@@ -561,493 +561,520 @@
     <view id="143" parent="4" name="v_outgoods">
       <Comment>VIEW</Comment>
     </view>
-    <column id="144" parent="135" name="id">
+    <routine id="144" parent="4" name="breakgoods">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="145" parent="4" name="goods">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="146" parent="4" name="productor">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="147" parent="4" name="staff">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="148" parent="4" name="vingoods">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="149" parent="4" name="voutgoods">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="150" parent="135" name="id">
       <Position>1</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="145" parent="135" name="goods_name">
+    <column id="151" parent="135" name="goods_name">
       <Position>2</Position>
       <DataType>char(15)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="146" parent="135" name="count">
+    <column id="152" parent="135" name="count">
       <Position>3</Position>
       <DataType>int(10) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="147" parent="135" name="breakdate">
+    <column id="153" parent="135" name="breakdate">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="148" parent="135" name="staff_id">
+    <column id="154" parent="135" name="staff_id">
       <Position>5</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="149" parent="135" name="breakgoodsname">
+    <index id="155" parent="135" name="breakgoodsname">
       <ColNames>goods_name</ColNames>
     </index>
-    <index id="150" parent="135" name="breakgoodsdate">
+    <index id="156" parent="135" name="breakgoodsdate">
       <ColNames>breakdate</ColNames>
     </index>
-    <index id="151" parent="135" name="staff_id">
+    <index id="157" parent="135" name="staff_id">
       <ColNames>staff_id</ColNames>
     </index>
-    <key id="152" parent="135" name="PRIMARY">
+    <key id="158" parent="135" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="153" parent="135" name="breakgoods_ibfk_1">
+    <foreign-key id="159" parent="135" name="breakgoods_ibfk_1">
       <ColNames>goods_name</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>goods</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <foreign-key id="154" parent="135" name="breakgoods_ibfk_2">
+    <foreign-key id="160" parent="135" name="breakgoods_ibfk_2">
       <ColNames>staff_id</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>staff</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <trigger id="155" parent="135" name="breakgoods_add">
+    <trigger id="161" parent="135" name="breakgoods_add">
       <Turn>after-row</Turn>
       <Events>I</Events>
     </trigger>
-    <trigger id="156" parent="135" name="breakgoods_del">
+    <trigger id="162" parent="135" name="breakgoods_del">
       <Turn>after-row</Turn>
       <Events>D</Events>
     </trigger>
-    <column id="157" parent="136" name="id">
+    <column id="163" parent="136" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="158" parent="136" name="name">
+    <column id="164" parent="136" name="name">
       <Position>2</Position>
       <DataType>char(15)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="159" parent="136" name="kind_name">
+    <column id="165" parent="136" name="kind_name">
       <Position>3</Position>
       <DataType>char(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="160" parent="136" name="productor_name">
+    <column id="166" parent="136" name="productor_name">
       <Position>4</Position>
       <DataType>varchar(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="161" parent="136" name="count">
+    <column id="167" parent="136" name="count">
       <Position>5</Position>
-      <DataType>bigint(20) unsigned|0</DataType>
+      <DataType>bigint(20)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="162" parent="136" name="inprice">
+    <column id="168" parent="136" name="inprice">
       <Position>6</Position>
       <DataType>decimal(6,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="163" parent="136" name="outprice">
+    <column id="169" parent="136" name="outprice">
       <Position>7</Position>
       <DataType>decimal(6,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="164" parent="136" name="discount">
+    <column id="170" parent="136" name="discount">
       <Position>8</Position>
       <DataType>decimal(3,2)|0</DataType>
+      <DefaultExpression>&apos;1.00&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="165" parent="136" name="min_num">
+    <column id="171" parent="136" name="min_num">
       <Position>9</Position>
       <DataType>int(10) unsigned|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="166" parent="136" name="goodsname">
+    <index id="172" parent="136" name="goodsname">
       <ColNames>name</ColNames>
     </index>
-    <index id="167" parent="136" name="kind_name">
+    <index id="173" parent="136" name="kind_name">
       <ColNames>kind_name</ColNames>
     </index>
-    <index id="168" parent="136" name="productor_name">
+    <index id="174" parent="136" name="productor_name">
       <ColNames>productor_name</ColNames>
     </index>
-    <key id="169" parent="136" name="PRIMARY">
+    <key id="175" parent="136" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="170" parent="136" name="goods_ibfk_1">
+    <foreign-key id="176" parent="136" name="goods_ibfk_1">
       <ColNames>kind_name</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>kind</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <foreign-key id="171" parent="136" name="goods_ibfk_2">
+    <foreign-key id="177" parent="136" name="goods_ibfk_2">
       <ColNames>productor_name</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>productor</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <trigger id="172" parent="136" name="goods_add">
+    <trigger id="178" parent="136" name="goods_add">
       <Turn>after-row</Turn>
       <Events>I</Events>
     </trigger>
-    <trigger id="173" parent="136" name="goods_del">
+    <trigger id="179" parent="136" name="goods_del">
       <Turn>after-row</Turn>
       <Events>D</Events>
     </trigger>
-    <column id="174" parent="137" name="id">
+    <column id="180" parent="137" name="id">
       <Position>1</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="175" parent="137" name="goods_name">
+    <column id="181" parent="137" name="goods_name">
       <Position>2</Position>
       <DataType>char(15)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="176" parent="137" name="inprice">
+    <column id="182" parent="137" name="inprice">
       <Position>3</Position>
       <DataType>decimal(6,2)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="177" parent="137" name="old_inprice">
+    <column id="183" parent="137" name="old_inprice">
       <Position>4</Position>
       <DataType>decimal(6,2)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="178" parent="137" name="count">
+    <column id="184" parent="137" name="count">
       <Position>5</Position>
       <DataType>int(10) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="179" parent="137" name="indate">
+    <column id="185" parent="137" name="indate">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="180" parent="137" name="staff_id">
+    <column id="186" parent="137" name="staff_id">
       <Position>7</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="181" parent="137" name="ingoodsname">
+    <index id="187" parent="137" name="ingoodsname">
       <ColNames>goods_name</ColNames>
     </index>
-    <index id="182" parent="137" name="ingoodsindate">
+    <index id="188" parent="137" name="ingoodsindate">
       <ColNames>indate</ColNames>
     </index>
-    <index id="183" parent="137" name="staff_id">
+    <index id="189" parent="137" name="staff_id">
       <ColNames>staff_id</ColNames>
     </index>
-    <key id="184" parent="137" name="PRIMARY">
+    <key id="190" parent="137" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="185" parent="137" name="ingoods_ibfk_1">
+    <foreign-key id="191" parent="137" name="ingoods_ibfk_1">
       <ColNames>goods_name</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>goods</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <foreign-key id="186" parent="137" name="ingoods_ibfk_2">
+    <foreign-key id="192" parent="137" name="ingoods_ibfk_2">
       <ColNames>staff_id</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>staff</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <trigger id="187" parent="137" name="ingoods_add">
+    <trigger id="193" parent="137" name="ingoods_add_old">
+      <Turn>before-row</Turn>
+      <Events>I</Events>
+    </trigger>
+    <trigger id="194" parent="137" name="ingoods_add">
       <Turn>after-row</Turn>
       <Events>I</Events>
     </trigger>
-    <trigger id="188" parent="137" name="ingoods_del">
+    <trigger id="195" parent="137" name="ingoods_del">
       <Turn>after-row</Turn>
       <Events>D</Events>
     </trigger>
-    <column id="189" parent="138" name="id">
+    <column id="196" parent="138" name="id">
       <Position>1</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="190" parent="138" name="name">
+    <column id="197" parent="138" name="name">
       <Position>2</Position>
       <DataType>char(10)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="191" parent="138" name="count">
+    <column id="198" parent="138" name="count">
       <Position>3</Position>
       <DataType>smallint(6)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="192" parent="138" name="name">
+    <index id="199" parent="138" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="193" parent="138" name="kindname">
+    <index id="200" parent="138" name="kindname">
       <ColNames>name</ColNames>
     </index>
-    <key id="194" parent="138" name="PRIMARY">
+    <key id="201" parent="138" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="195" parent="138" name="name">
+    <key id="202" parent="138" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="196" parent="139" name="id">
+    <column id="203" parent="139" name="id">
       <Position>1</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="197" parent="139" name="num">
+    <column id="204" parent="139" name="num">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="198" parent="139" name="goods_name">
+    <column id="205" parent="139" name="goods_name">
       <Position>3</Position>
       <DataType>char(15)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="199" parent="139" name="count">
+    <column id="206" parent="139" name="count">
       <Position>4</Position>
       <DataType>int(10) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="200" parent="139" name="outdate">
+    <column id="207" parent="139" name="outdate">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="201" parent="139" name="staff_id">
+    <column id="208" parent="139" name="staff_id">
       <Position>6</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="202" parent="139" name="num">
+    <index id="209" parent="139" name="num">
       <ColNames>num</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="203" parent="139" name="ingoodsnum">
+    <index id="210" parent="139" name="ingoodsnum">
       <ColNames>num</ColNames>
     </index>
-    <index id="204" parent="139" name="ingoodsname">
+    <index id="211" parent="139" name="ingoodsname">
       <ColNames>goods_name</ColNames>
     </index>
-    <index id="205" parent="139" name="ingoodsindate">
+    <index id="212" parent="139" name="ingoodsindate">
       <ColNames>outdate</ColNames>
     </index>
-    <index id="206" parent="139" name="staff_id">
+    <index id="213" parent="139" name="staff_id">
       <ColNames>staff_id</ColNames>
     </index>
-    <key id="207" parent="139" name="PRIMARY">
+    <key id="214" parent="139" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="208" parent="139" name="num">
+    <key id="215" parent="139" name="num">
       <ColNames>num</ColNames>
       <UnderlyingIndexName>num</UnderlyingIndexName>
     </key>
-    <foreign-key id="209" parent="139" name="outgoods_ibfk_1">
+    <foreign-key id="216" parent="139" name="outgoods_ibfk_1">
       <ColNames>goods_name</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>goods</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <foreign-key id="210" parent="139" name="outgoods_ibfk_2">
+    <foreign-key id="217" parent="139" name="outgoods_ibfk_2">
       <ColNames>staff_id</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>staff</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <trigger id="211" parent="139" name="outgoods_add">
+    <trigger id="218" parent="139" name="outgoods_add">
       <Turn>after-row</Turn>
       <Events>I</Events>
     </trigger>
-    <trigger id="212" parent="139" name="outgoods_del">
+    <trigger id="219" parent="139" name="outgoods_del">
       <Turn>after-row</Turn>
       <Events>D</Events>
     </trigger>
-    <column id="213" parent="140" name="id">
+    <column id="220" parent="140" name="id">
       <Position>1</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="214" parent="140" name="name">
+    <column id="221" parent="140" name="name">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="215" parent="140" name="person">
+    <column id="222" parent="140" name="person">
       <Position>3</Position>
       <DataType>varchar(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="216" parent="140" name="tel">
+    <column id="223" parent="140" name="tel">
       <Position>4</Position>
       <DataType>varchar(15)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="217" parent="140" name="company_tel">
+    <column id="224" parent="140" name="company_tel">
       <Position>5</Position>
       <DataType>varchar(15)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="218" parent="140" name="postcode">
+    <column id="225" parent="140" name="postcode">
       <Position>6</Position>
       <DataType>varchar(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="219" parent="140" name="address">
+    <column id="226" parent="140" name="address">
       <Position>7</Position>
       <DataType>varchar(30)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="220" parent="140" name="name">
+    <index id="227" parent="140" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="221" parent="140" name="productorname">
+    <index id="228" parent="140" name="productorname">
       <ColNames>name</ColNames>
     </index>
-    <key id="222" parent="140" name="PRIMARY">
+    <key id="229" parent="140" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="223" parent="140" name="name">
+    <key id="230" parent="140" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="224" parent="141" name="id">
+    <column id="231" parent="141" name="id">
       <Position>1</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="225" parent="141" name="username">
+    <column id="232" parent="141" name="username">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="226" parent="141" name="sex">
+    <column id="233" parent="141" name="sex">
       <Position>3</Position>
       <DataType>char(2)|0</DataType>
       <DefaultExpression>&apos;保密&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="227" parent="141" name="broth">
+    <column id="234" parent="141" name="broth">
       <Position>4</Position>
       <DataType>date|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="228" parent="141" name="tel">
+    <column id="235" parent="141" name="tel">
       <Position>5</Position>
       <DataType>varchar(15)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="229" parent="141" name="password">
+    <column id="236" parent="141" name="password">
       <Position>6</Position>
       <DataType>varchar(32)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="230" parent="141" name="staffname">
+    <index id="237" parent="141" name="staffname">
       <ColNames>username</ColNames>
     </index>
-    <key id="231" parent="141" name="PRIMARY">
+    <key id="238" parent="141" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="232" parent="142" name="id">
+    <column id="239" parent="142" name="id">
       <Position>1</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="233" parent="142" name="goods_name">
+    <column id="240" parent="142" name="goods_name">
       <Position>2</Position>
       <DataType>char(15)|0</DataType>
     </column>
-    <column id="234" parent="142" name="kind_name">
+    <column id="241" parent="142" name="kind_name">
       <Position>3</Position>
       <DataType>char(10)|0</DataType>
     </column>
-    <column id="235" parent="142" name="productor_name">
+    <column id="242" parent="142" name="productor_name">
       <Position>4</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="236" parent="142" name="count">
+    <column id="243" parent="142" name="count">
       <Position>5</Position>
       <DataType>int(10) unsigned|0</DataType>
     </column>
-    <column id="237" parent="142" name="inprice">
+    <column id="244" parent="142" name="inprice">
       <Position>6</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="238" parent="142" name="indate">
+    <column id="245" parent="142" name="indate">
       <Position>7</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="239" parent="142" name="username">
+    <column id="246" parent="142" name="username">
       <Position>8</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="240" parent="143" name="id">
+    <column id="247" parent="143" name="id">
       <Position>1</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="241" parent="143" name="num">
+    <column id="248" parent="143" name="num">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="242" parent="143" name="goods_name">
+    <column id="249" parent="143" name="goods_name">
       <Position>3</Position>
       <DataType>char(15)|0</DataType>
     </column>
-    <column id="243" parent="143" name="kind_name">
+    <column id="250" parent="143" name="kind_name">
       <Position>4</Position>
       <DataType>char(10)|0</DataType>
     </column>
-    <column id="244" parent="143" name="productor_name">
+    <column id="251" parent="143" name="productor_name">
       <Position>5</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="245" parent="143" name="count">
+    <column id="252" parent="143" name="count">
       <Position>6</Position>
       <DataType>int(10) unsigned|0</DataType>
     </column>
-    <column id="246" parent="143" name="outdate">
+    <column id="253" parent="143" name="outdate">
       <Position>7</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="247" parent="143" name="username">
+    <column id="254" parent="143" name="username">
       <Position>8</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>

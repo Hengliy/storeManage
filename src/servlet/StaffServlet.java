@@ -22,18 +22,22 @@ public class StaffServlet extends HttpServlet {
             request.setCharacterEncoding("utf-8");
             response.setCharacterEncoding("utf-8");
 
-            List<StaffEntity> allStaffsList = new ArrayList<StaffEntity>();
+            List<StaffEntity> allStaffList = new ArrayList<StaffEntity>();
 
             System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
             StaffDaoImpl dao = new StaffDaoImpl();
 
-            //allStaffsList=dao.getAllStaff();
+            allStaffList=dao.getAllStaff();
 
-            request.getSession().setAttribute("allStaffList", allStaffsList);
+            System.out.println(allStaffList.get(0).getUsername());
+
+
+            request.getSession().invalidate();
+
+            request.getSession().setAttribute("allStaffList", allStaffList);
 
             //request.getRequestDispatcher("/goods.jsp").forward(request, response);//请求转发
-
             response.sendRedirect("/staff.jsp");//需要用重定向  这样地址栏不变
         }
     }

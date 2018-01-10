@@ -3,7 +3,6 @@ package entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Table(name = "ingoods", schema = "store", catalog = "")
@@ -90,19 +89,30 @@ public class IngoodsEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         IngoodsEntity that = (IngoodsEntity) o;
-        return id == that.id &&
-                Objects.equals(goodsName, that.goodsName) &&
-                Objects.equals(inprice, that.inprice) &&
-                Objects.equals(oldInprice, that.oldInprice) &&
-                Objects.equals(count, that.count) &&
-                Objects.equals(indate, that.indate) &&
-                Objects.equals(staffId, that.staffId);
+
+        if (id != that.id) return false;
+        if (goodsName != null ? !goodsName.equals(that.goodsName) : that.goodsName != null) return false;
+        if (inprice != null ? !inprice.equals(that.inprice) : that.inprice != null) return false;
+        if (oldInprice != null ? !oldInprice.equals(that.oldInprice) : that.oldInprice != null) return false;
+        if (count != null ? !count.equals(that.count) : that.count != null) return false;
+        if (indate != null ? !indate.equals(that.indate) : that.indate != null) return false;
+        if (staffId != null ? !staffId.equals(that.staffId) : that.staffId != null) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, goodsName, inprice, oldInprice, count, indate, staffId);
+        int result = (int) id;
+        result = 31 * result + (goodsName != null ? goodsName.hashCode() : 0);
+        result = 31 * result + (inprice != null ? inprice.hashCode() : 0);
+        result = 31 * result + (oldInprice != null ? oldInprice.hashCode() : 0);
+        result = 31 * result + (count != null ? count.hashCode() : 0);
+        result = 31 * result + (indate != null ? indate.hashCode() : 0);
+        result = 31 * result + (staffId != null ? staffId.hashCode() : 0);
+        return result;
     }
+
 }

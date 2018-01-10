@@ -4,12 +4,12 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="entity.StaffEntity" table="staff" schema="store">
+    <class name="entity.StaffEntity" table="staff" schema="store" dynamic-insert="true" dynamic-update="true">
         <id name="id">
             <column name="id" sql-type="smallint(5) unsigned"/>
         </id>
         <property name="username">
-            <column name="username" sql-type="varchar(10)" length="10" not-null="true"/>
+            <column name="username" sql-type="varchar(10)" length="10"/>
         </property>
         <property name="sex">
             <column name="sex" sql-type="char(2)" length="2" />

@@ -1,7 +1,6 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "kind", schema = "store", catalog = "")
@@ -44,15 +43,22 @@ public class KindEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         KindEntity that = (KindEntity) o;
-        return id == that.id &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(count, that.count);
+
+        if (id != that.id) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (count != null ? !count.equals(that.count) : that.count != null) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, name, count);
+        int result = (int) id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (count != null ? count.hashCode() : 0);
+        return result;
     }
+
 }

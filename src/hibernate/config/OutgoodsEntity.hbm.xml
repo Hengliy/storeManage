@@ -4,24 +4,24 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="entity.BreakgoodsEntity" table="breakgoods" schema="store">
+    <class name="entity.OutgoodsEntity" table="outgoods" schema="store" dynamic-insert="true" dynamic-update="true">
         <id name="id">
             <column name="id" sql-type="smallint(5) unsigned"/>
         </id>
+        <property name="num">
+            <column name="num" sql-type="varchar(10)" length="10" />
+        </property>
         <property name="goodsName">
-            <column name="goods_name" sql-type="char(15)" length="15" not-null="true"/>
+            <column name="goods_name" sql-type="char(15)" length="15" />
         </property>
         <property name="count">
-            <column name="count" sql-type="int(10) unsigned"/>
+            <column name="count" sql-type="int(10) unsigned" />
         </property>
-        <property name="breakdate">
-            <column name="breakdate" sql-type="datetime"/>
+        <property name="outdate">
+            <column name="outdate" sql-type="datetime" />
         </property>
         <property name="staffId">
             <column name="staff_id" sql-type="smallint(5) unsigned" />
         </property>
-        <many-to-one name="staffByStaffId" class="entity.StaffEntity">
-            <column name="staff_id"/>
-        </many-to-one>
     </class>
 </hibernate-mapping>

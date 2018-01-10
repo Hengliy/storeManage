@@ -320,10 +320,9 @@
                 <th class="table-id">编号</th>
                 <th class="table-title">姓名</th>
                 <th class="table-type">性别</th>
-                <th class="table-type">生日</th>
-                <th class="table-type">会员等级</th>
-                <th class="table-author am-hide-sm-only">上架/下架 <i class="am-icon-check am-text-warning"></i> <i class="am-icon-close am-text-primary"></i></th>
-                <th class="table-date am-hide-sm-only">上架时间</th>
+                <th class="table-type">出生日期 </th>
+                <th class="table-type">密码</th>
+                <th class="table-type">电话</th>
                 <th width="163px" class="table-set">操作</th>
             </tr>
             </thead>
@@ -339,12 +338,10 @@
             <tr>
                 <td><%= staffEntity.getId()%></td>
                 <td><%= staffEntity.getUsername()%></td>
-                <td><%= staffEntity.getTel()%></td>
+                <td><%= staffEntity.getSex()%></td>
                 <td><%= staffEntity.getBroth()%></td>
-
-
-                <td class="am-hide-sm-only"><i class="am-icon-check am-text-warning"></i></td>
-                <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                <td><%= staffEntity.getPassword()%></td>
+                <td><%= staffEntity.getTel()%></td>
 
                 <td><div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">

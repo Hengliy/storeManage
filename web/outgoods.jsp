@@ -108,75 +108,6 @@
 </div>
 
 
-<div class="am-popup am-popup-inner" id="my-popups">
-    <div class="am-popup-hd">
-        <h4 class="am-popup-title">详细库存信息（这里包含 销量 库存  损耗，  客服备注  销售的全部金额）</h4>
-        <span data-am-modal-close class="am-close">&times;</span> </div>
-    <div class="am-popup-bd">
-
-
-
-
-        <form class="am-form tjlanmu">
-            <div class="am-form-group am-cf">
-                <div class="zuo">销量：</div>
-                <div class="you">
-                    245234523452
-                </div>
-            </div>
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 库存：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 损耗：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 购买信息：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 销售金额：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 成本：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 利润：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-        </form>
-    </div>
-</div>
-
-
-
-
-
-
 <div class="am-popup am-popup-inner" id="my-popupss">
     <div class="am-popup-hd">
         <h4 class="am-popup-title">复制栏目</h4>
@@ -332,7 +263,7 @@
             </thead>
             <tbody>
             <%
-                List<VOutgoodsEntity> list=(List<VOutgoodsEntity>)request.getSession().getAttribute("allOutGoodsList");
+                List<VOutgoodsEntity> list=(List<VOutgoodsEntity>)request.getSession().getAttribute("allVOutGoodsList");
                 if(list!=null)
                 {
                     for(VOutgoodsEntity outgoodsEntity:list)

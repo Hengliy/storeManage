@@ -1,7 +1,6 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "productor", schema = "store", catalog = "")
@@ -88,19 +87,30 @@ public class ProductorEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         ProductorEntity that = (ProductorEntity) o;
-        return id == that.id &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(person, that.person) &&
-                Objects.equals(tel, that.tel) &&
-                Objects.equals(companyTel, that.companyTel) &&
-                Objects.equals(postcode, that.postcode) &&
-                Objects.equals(address, that.address);
+
+        if (id != that.id) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (person != null ? !person.equals(that.person) : that.person != null) return false;
+        if (tel != null ? !tel.equals(that.tel) : that.tel != null) return false;
+        if (companyTel != null ? !companyTel.equals(that.companyTel) : that.companyTel != null) return false;
+        if (postcode != null ? !postcode.equals(that.postcode) : that.postcode != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, name, person, tel, companyTel, postcode, address);
+        int result = (int) id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (person != null ? person.hashCode() : 0);
+        result = 31 * result + (tel != null ? tel.hashCode() : 0);
+        result = 31 * result + (companyTel != null ? companyTel.hashCode() : 0);
+        result = 31 * result + (postcode != null ? postcode.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        return result;
     }
+
 }

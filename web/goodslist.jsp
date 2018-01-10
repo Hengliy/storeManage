@@ -42,7 +42,7 @@
                     <div class="am-form-group">
                         <div class="zuo">商品名称</div>
                         <div class="you">
-                            <input name="name" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="牙刷">
+                            <input required="required" name="name" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="牙刷">
                         </div>
                     </div>
 
@@ -55,39 +55,47 @@
                     <div class="am-form-group">
                         <div class="zuo">品种</div>
                         <div class="you">
-                            <input name="kind_name" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="生活用品">
+                            <input required="required" name="kind_name" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="生活用品">
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <div class="zuo">最小库存</div>
+                        <div class="you">
+                            <input required="required"  name="min_num" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="7.5">
                         </div>
                     </div>
 
                     <div class="am-form-group">
                         <div class="zuo">厂家</div>
                         <div class="you">
-                            <input name="productor_name" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="赛诺有限公司">
+                            <input  required="required" name="productor_name" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="赛诺有限公司">
                         </div>
                     </div>
 
                     <div class="am-form-group">
                         <div class="zuo">进价</div>
                         <div class="you">
-                            <input name="inprice" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="12.3">
+                            <input required="required" name="inprice" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="12.3">
                         </div>
                     </div>
 
                     <div class="am-form-group">
                         <div class="zuo">售价</div>
                         <div class="you">
-                            <input name="outprice" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="15">
+                            <input required="required" name="outprice" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="15">
                         </div>
                     </div>
 
                     <div class="am-form-group">
                         <div class="zuo">折扣</div>
                         <div class="you">
-                            <input name="dicount" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="7.5">
+                            <input required="required" name="discount" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="7.5">
                         </div>
                     </div>
 
                     <div class="am-form-group am-cf">
+                        <div class="zuo">是否上架</div>
                         <div class="zuo">是否上架</div>
                         <div class="you" style="margin-top: 3px;">
                             <label class="am-checkbox-inline">
@@ -110,149 +118,7 @@
         </div>
 
 
-        <div class="am-popup am-popup-inner" id="my-popups">
-            <div class="am-popup-hd">
-                <h4 class="am-popup-title">详细库存信息（这里包含 销量 库存  损耗，  客服备注  销售的全部金额）</h4>
-                <span data-am-modal-close class="am-close">&times;</span> </div>
-            <div class="am-popup-bd">
 
-
-
-
-                <form class="am-form tjlanmu">
-                    <div class="am-form-group am-cf">
-                        <div class="zuo">销量：</div>
-                        <div class="you">
-                            245234523452
-                        </div>
-                    </div>
-                    <div class="am-form-group am-cf">
-                        <div class="zuo"> 库存：</div>
-                        <div class="you">
-                            234523452
-                        </div>
-                    </div>
-
-
-                    <div class="am-form-group am-cf">
-                        <div class="zuo"> 损耗：</div>
-                        <div class="you">
-                            234523452
-                        </div>
-                    </div>
-
-                    <div class="am-form-group am-cf">
-                        <div class="zuo"> 购买信息：</div>
-                        <div class="you">
-                            234523452
-                        </div>
-                    </div>
-
-                    <div class="am-form-group am-cf">
-                        <div class="zuo"> 销售金额：</div>
-                        <div class="you">
-                            234523452
-                        </div>
-                    </div>
-
-
-                    <div class="am-form-group am-cf">
-                        <div class="zuo"> 成本：</div>
-                        <div class="you">
-                            234523452
-                        </div>
-                    </div>
-
-                    <div class="am-form-group am-cf">
-                        <div class="zuo"> 利润：</div>
-                        <div class="you">
-                            234523452
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-
-
-
-        <div class="am-popup am-popup-inner" id="my-popupss">
-            <div class="am-popup-hd">
-                <h4 class="am-popup-title">复制栏目</h4>
-                <span data-am-modal-close class="am-close">&times;</span> </div>
-            <div class="am-popup-bd">
-                <form class="am-form tjlanmu">
-
-
-                    <div class="am-form-group">
-                        <div class="zuo">复制到：</div>
-                        <div class="you">
-
-                            <select data-am-selected="{btnWidth: 200, btnSize: 'sm', btnStyle: 'danger'}">
-                                <option value="a">Apple</option>
-                                <option value="b">Banana</option>
-                                <option value="o">Orange</option>
-                                <option value="m">Mango</option>
-                            </select>
-                            顶级栏目选默认
-
-                        </div>
-                    </div>
-
-
-                    <div class="am-form-group">
-                        <div class="zuo">新栏目名称：</div>
-                        <div class="you">
-                            <input type="email" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入标题">
-                        </div>
-                    </div>
-                    <div class="am-form-group">
-                        <div class="zuo">栏目关键词：</div>
-                        <div class="you">
-                            <input type="password" class="am-input-sm" id="doc-ipt-pwd-1" placeholder="请输入关键词">
-                        </div>
-                    </div>
-                    <div class="am-form-group am-cf">
-                        <div class="zuo">栏目描述：</div>
-                        <div class="you">
-                            <textarea class="" rows="2" id="doc-ta-1"></textarea>
-                        </div>
-                    </div>
-                    <div class="am-form-group am-cf">
-                        <div class="zuo">栏目图片：</div>
-                        <div class="you" style="height: 45px;">
-                            <input type="file" id="doc-ipt-file-1">
-                            <p class="am-form-help">请选择要上传的文件...</p>
-                        </div>
-                    </div>
-                    <div class="am-form-group am-cf">
-                        <div class="zuo">简介：</div>
-                        <div class="you">
-                            <textarea class="" rows="2" id="doc-ta-1"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="am-form-group am-cf">
-                        <div class="zuo">状态：</div>
-                        <div class="you" style="margin-top: 3px;">
-                            <label class="am-checkbox-inline">
-                                <input type="checkbox" value="option1">
-                                显示 </label>
-                            <label class="am-checkbox-inline">
-                                <input type="checkbox" value="option2">
-                                隐藏 </label>
-                        </div>
-                    </div>
-                    <div class="am-form-group am-cf">
-                        <div class="you">
-                            <p>
-                                <button type="submit" class="am-btn am-btn-success am-radius">提交</button>
-                            </p>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
 
         <div class="admin-biaogelist">
             <div class="listbiaoti am-cf">
@@ -269,8 +135,7 @@
 
             </div>
 
-
-            <from action="servlet/SearchGoodsServlet" >
+            <form  method="post" action="servlet/GoodsServlet?method=search">
                 <div class="am-btn-toolbars am-btn-toolbar am-kg am-cf">
                     <ul>
                         <li>
@@ -311,7 +176,7 @@
                             </div>
                         </li>
                         <li><input name="words" type="text" class="am-form-field am-input-sm am-input-xm" placeholder="关键词搜索" /></li>
-                        <li><button type="button" class="am-btn am-radius am-btn-xs am-btn-success" style="margin-top: -1px;">搜索</button></li>
+                        <li><button type="submit" value="submit" class="am-btn am-radius am-btn-xs am-btn-success" style="margin-top: -1px;">搜索</button></li>
                     </ul>
                 </div>
             </from>
@@ -360,13 +225,13 @@
                         <td class="am-hide-sm-only" align="center"><i class="am-icon-check am-text-warning"></i></td>
                         <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
 
-                        <td><div class="am-btn-toolbar">
-                            <div class="am-btn-group am-btn-group-xs">
-                                <button class="am-btn am-btn-default am-btn-xs am-text-success am-round"><span class="am-icon-search"></span> </button>
-                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary am-round"><span class="am-icon-pencil-square-o"></span></button>
-                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-round"><span class="am-icon-trash-o"></span></button>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <a href='servlet/GoodsServlet?method=delete&deleteGoodsId=<%= goodsEntity.getId()%>'> <input type='button' class="am-btn am-btn-default am-btn-xs am-text-danger am-round am-icon-trash-o" value='删除'></a>
+                                </div>
                             </div>
-                        </div></td>
+                        </td>
                     </tr>
                     <%
                         }}

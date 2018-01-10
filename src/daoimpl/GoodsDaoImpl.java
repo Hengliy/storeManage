@@ -2,6 +2,7 @@ package daoimpl;
 
 import dao.GoodsDao;
 import entity.GoodsEntity;
+import hibernate.BaseDaoImpl;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,21 +12,13 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 
 //商品的业务逻辑类
-public class GoodsDaoImpl implements GoodsDao {
+public class GoodsDaoImpl extends BaseDaoImpl implements GoodsDao {
     private Session session = null;
     private Transaction transaction = null;
     private Configuration configuration = null;
     private SessionFactory sessionFactory = null;
 
     public GoodsDaoImpl() {
-        //实例化session
-        //实例化Configuration，这行代码默认加载hibernate.cfg.xml文件
-        System.out.print("################");
-        configuration = new Configuration().configure();
-        //以Configuration创建SessionFactory
-        System.out.print("++++++++++++++++++");
-        sessionFactory = configuration.buildSessionFactory();
-        System.out.print("$$$$$$$$$$$$$$$$$$$");
     }
 
     /**
@@ -34,14 +27,14 @@ public class GoodsDaoImpl implements GoodsDao {
     @Override
     public List<GoodsEntity> getAllGoods()
     {
-        List<GoodsEntity>  list=null;
+/*        List<GoodsEntity> list=null;
         try{
 
             session =sessionFactory.openSession();
             transaction=session.beginTransaction();
 
             String hql="from GoodsEntity";
-            list = session.createQuery(hql).list();
+            list = session.createSQLQuery("{call goods()}").addEntity(GoodsEntity.class).list();
 
             transaction.commit();
 
@@ -53,12 +46,13 @@ public class GoodsDaoImpl implements GoodsDao {
                 session.close();
             }
         }
-        return list;
+        return list;*/
+        return (List<GoodsEntity>) getAllData("goods",GoodsEntity.class);
     }
 
     @Override
     public Boolean insertGoods(GoodsEntity goodsEntity) {
-        return null;
+        return insertByID(goodsEntity);
     }
 
     @Override
@@ -67,13 +61,23 @@ public class GoodsDaoImpl implements GoodsDao {
     }
 
     @Override
-    public Boolean deleteGoods(int id) {
-        return null;
+    public Boolean deleteGoods(int id)
+    {
+        GoodsEntity goodsEntity = new GoodsEntity();
+        goodsEntity.setId(id);
+        return deletByID(goodsEntity);
+    }
+
+    @Override
+    public Boolean updateGoods(GoodsEntity entity) {
+
+        return updateByID(entity);
     }
 
     @Override
     public List<GoodsEntity> searchGoodsBy(List<String> list) {
         return null;
     }
+
 
 }

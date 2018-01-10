@@ -2,7 +2,6 @@ package entity;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Objects;
 
 @Entity
 @Table(name = "staff", schema = "store", catalog = "")
@@ -78,18 +77,27 @@ public class StaffEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         StaffEntity that = (StaffEntity) o;
-        return id == that.id &&
-                Objects.equals(username, that.username) &&
-                Objects.equals(sex, that.sex) &&
-                Objects.equals(broth, that.broth) &&
-                Objects.equals(tel, that.tel) &&
-                Objects.equals(password, that.password);
+
+        if (id != that.id) return false;
+        if (username != null ? !username.equals(that.username) : that.username != null) return false;
+        if (sex != null ? !sex.equals(that.sex) : that.sex != null) return false;
+        if (broth != null ? !broth.equals(that.broth) : that.broth != null) return false;
+        if (tel != null ? !tel.equals(that.tel) : that.tel != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, username, sex, broth, tel, password);
+        int result = (int) id;
+        result = 31 * result + (username != null ? username.hashCode() : 0);
+        result = 31 * result + (sex != null ? sex.hashCode() : 0);
+        result = 31 * result + (broth != null ? broth.hashCode() : 0);
+        result = 31 * result + (tel != null ? tel.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
     }
 }
