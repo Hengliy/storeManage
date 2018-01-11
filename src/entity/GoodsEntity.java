@@ -142,4 +142,18 @@ public class GoodsEntity {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "GoodsEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", kindName='" + kindName + '\'' +
+                ", productorName='" + productorName + '\'' +
+                ", count=" + count +
+                ", inprice=" + inprice +
+                ", outprice=" + outprice +
+                ", discount=" + discount +
+                ", minNum=" + minNum +
+                '}';
+    }
 }

@@ -26,28 +26,7 @@ public class GoodsDaoImpl extends BaseDaoImpl implements GoodsDao {
      * 查询Goods表所有数据
      */
     @Override
-    public List<GoodsEntity> getAllGoods()
-    {
-/*        List<GoodsEntity> list=null;
-        try{
-
-            session =sessionFactory.openSession();
-            transaction=session.beginTransaction();
-
-            String hql="from GoodsEntity";
-            list = session.createSQLQuery("{call goods()}").addEntity(GoodsEntity.class).list();
-
-            transaction.commit();
-
-        }catch (HibernateException e) {
-            transaction.rollback();
-            e.printStackTrace();
-        }finally {
-            if(session!=null){
-                session.close();
-            }
-        }
-        return list;*/
+    public List<GoodsEntity> getAllGoods() {
         return (List<GoodsEntity>) getAllData("goods",GoodsEntity.class);
     }
 
@@ -71,8 +50,7 @@ public class GoodsDaoImpl extends BaseDaoImpl implements GoodsDao {
 
     @Override
     public List<GoodsEntity> searchGoodsBy(HashMap<String, String> condition) {
-        searchByWhat(condition,GoodsEntity.class);
-        return null;
+        return (List<GoodsEntity>) searchByWhat(condition,GoodsEntity.class);
     }
 
     @Override

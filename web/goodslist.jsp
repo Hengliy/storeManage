@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="daoimpl.GoodsDaoImpl"%>
 <%@ page import="entity.GoodsEntity" %>
 <%
@@ -160,11 +160,11 @@
 
                         <li style="margin-right: 0;">
                             <span class="tubiao am-icon-calendar"></span>
-                            <input name="start_time" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
+                            <input name="starttime" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
                         </li>
                         <li style="margin-left: -4px;">
                             <span class="tubiao am-icon-calendar"></span>
-                            <input name="end_time" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
+                            <input name="endtime" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
                         </li>
 
                         <li><input name="words" type="text" class="am-form-field am-input-sm am-input-xm" placeholder="关键词搜索" /></li>

@@ -3,6 +3,7 @@ package servlet;
 import dao.GoodsDao;
 import daoimpl.GoodsDaoImpl;
 import entity.GoodsEntity;
+import hibernate.BaseDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @WebServlet(name ="showAllGoodsServlet",urlPatterns = {"/servlet/GoodsServlet"}) //url要先写一个“/”表示路径
@@ -28,8 +31,9 @@ public class GoodsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("***********doPost_goodsServlet*********************");
 
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=utf-8");
 
         String method=request.getParameter("method");
         if(method!=null&&method.equals("getall")) {
@@ -80,7 +84,7 @@ public class GoodsServlet extends HttpServlet {
             System.out.println("delete Goods    "+Integer.parseInt(request.getParameter("deleteGoodsId")));
             GoodsDao dao=new GoodsDaoImpl();
             int id=Integer.parseInt(request.getParameter("deleteGoodsId"));
-            if(dao.deleteGoods(10001))//如果插入成功
+            if(dao.deleteGoods(id))//如果插入成功
             {
                 System.out.println("successfully");
                 response.sendRedirect("GoodsServlet?method=getall");//需要用重定向  这样地址栏不变
@@ -95,20 +99,40 @@ public class GoodsServlet extends HttpServlet {
         {
             System.out.println("Search Goods");
 
-            System.out.println(request.getParameter("start_time")+"   "+request.getParameter("start_time"));
+            //System.out.println(request.getParameter("start_time")+"   "+request.getParameter("start_time"));
             System.out.println(request.getParameter("words"));
             System.out.println(request.getParameter("kind")+"   "+request.getParameter("productor"));
 
-            GoodsDao dao=new GoodsDaoImpl();
-//            List<String> list =new ArrayList<String>();
-//            String words=request.getParameter("words");
-//
-//            if(words!=null)
-//                list.add(words);
-//
-//            List<GoodsEntity> allGoodsList=dao.searchGoodsBy(list);
-//            request.getSession().setAttribute("allGoodsList", allGoodsList);
-//            response.sendRedirect("/goodslist.jsp");//需要用重定向  这样地址栏不变
+            HashMap<String,String> map =new HashMap<String, String>() ;
+
+            GoodsDao dao = new GoodsDaoImpl();
+
+            // map.put("name",request.getParameter("words"));
+             map.put("kind_name",request.getParameter("kind"));
+            map.put("productor_name",request.getParameter("productor"));
+
+
+            //GoodsDao dao=new GoodsDaoImpl();
+           // HashMap<String,String> map =new HashMap<String, String>();
+
+           // String kind_name="食物";
+//            String iso = new String(kind_name.getBytes("UTF-8"),"ISO-8859-1");
+//            String utf8 = new String(iso.getBytes("ISO-8859-1"),"UTF-8");
+           // if(kind_name!= null )
+             // map.put("name","小熊饼干");
+
+            List<GoodsEntity> allGoodsList= dao.searchGoodsBy(map);
+
+            if(allGoodsList!=null)
+                for(GoodsEntity goodsEntity:allGoodsList)
+                {
+                    System.out.println(goodsEntity);
+                }
+
+            request.getSession().invalidate();
+            request.getSession().setAttribute("allGoodsList", allGoodsList);
+            response.sendRedirect("/servlet/GoodsServlet?method=getall");//需要用重定向  这样地址栏不变
+
         }
     }
 

@@ -34,7 +34,6 @@
                 <a href="servlet/OutGoodsServlet?method=getall">订单管理</a>
                 <a href="servlet/InGoodsServlet?method=getall">进货管理</a>
                 <a href="servlet/StaffServlet?method=getall">会员管理</a>
-                <a href="#">系统设置</a>
             </li>
 
             <li class="soso">
@@ -86,9 +85,7 @@
             </ul>
             <h3 class="am-icon-volume-up"><em></em> <a href="#">信息通知</a></h3>
             <ul>
-            </ul>
-            <h3 class="am-icon-gears"><em></em> <a href="#">系统设置</a></h3>
-            <ul>
+
             </ul>
         </div>
         <!-- sideMenu End -->

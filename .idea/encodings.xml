@@ -8,6 +8,10 @@
     <file url="file://$PROJECT_DIR$/src/daoimpl/StaffDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/hibernate/BaseDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/hibernate/HibernateUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/servlet/GoodsServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/servlet/InGoodsServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/servlet/OutGoodsServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/servlet/StaffServlet.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
