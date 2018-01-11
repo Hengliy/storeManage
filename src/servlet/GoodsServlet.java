@@ -77,9 +77,10 @@ public class GoodsServlet extends HttpServlet {
             }
         }else if(method.equals("delete"))
         {
-            System.out.println("delete Goods");
+            System.out.println("delete Goods    "+Integer.parseInt(request.getParameter("deleteGoodsId")));
             GoodsDao dao=new GoodsDaoImpl();
-            if(dao.deleteGoods(Integer.parseInt(request.getParameter("deleteGoodsId")))==true)//如果插入成功
+            int id=Integer.parseInt(request.getParameter("deleteGoodsId"));
+            if(dao.deleteGoods(10001))//如果插入成功
             {
                 System.out.println("successfully");
                 response.sendRedirect("GoodsServlet?method=getall");//需要用重定向  这样地址栏不变
@@ -93,18 +94,21 @@ public class GoodsServlet extends HttpServlet {
         }else if(method.equals("search"))
         {
             System.out.println("Search Goods");
+
+            System.out.println(request.getParameter("start_time")+"   "+request.getParameter("start_time"));
+            System.out.println(request.getParameter("words"));
+            System.out.println(request.getParameter("kind")+"   "+request.getParameter("productor"));
+
             GoodsDao dao=new GoodsDaoImpl();
-            List<String> list =new ArrayList<String>();
-            String words=request.getParameter("words");
-            if(words!=null)
-                list.add(words);
-
-            List<GoodsEntity> allGoodsList=dao.searchGoodsBy(list);
-
-            request.getSession().setAttribute("allGoodsList", allGoodsList);
-
-            response.sendRedirect("/goodslist.jsp");//需要用重定向  这样地址栏不变
-
+//            List<String> list =new ArrayList<String>();
+//            String words=request.getParameter("words");
+//
+//            if(words!=null)
+//                list.add(words);
+//
+//            List<GoodsEntity> allGoodsList=dao.searchGoodsBy(list);
+//            request.getSession().setAttribute("allGoodsList", allGoodsList);
+//            response.sendRedirect("/goodslist.jsp");//需要用重定向  这样地址栏不变
         }
     }
 

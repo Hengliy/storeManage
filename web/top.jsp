@@ -61,7 +61,7 @@
 <div class="am-cf admin-main">
 
     <div class="nav-navicon admin-main admin-sidebar">
-        <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
+        <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎管理员：&nbsp&nbsp<b>张伟</b></div>
         <div class="sideMenu">
             <h3 class="am-icon-flag"><em></em> <a href="#">商品管理</a></h3>
             <ul>
@@ -79,7 +79,7 @@
                 <li>订单打印</li>
                 <li>添加订单</li>
                 <li>发货单列表</li>
-                <li>换货单列表</li>
+                <li>换货单列表<qing/li>
             </ul>
             <h3 class="am-icon-users on"><em></em> <a href="#">会员管理</a></h3>
             <ul>

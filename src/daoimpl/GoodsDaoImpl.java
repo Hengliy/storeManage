@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.HashMap;
 import java.util.List;
 
 //商品的业务逻辑类
@@ -69,14 +70,15 @@ public class GoodsDaoImpl extends BaseDaoImpl implements GoodsDao {
     }
 
     @Override
-    public Boolean updateGoods(GoodsEntity entity) {
-
-        return updateByID(entity);
+    public List<GoodsEntity> searchGoodsBy(HashMap<String, String> condition) {
+        searchByWhat(condition,GoodsEntity.class);
+        return null;
     }
 
     @Override
-    public List<GoodsEntity> searchGoodsBy(List<String> list) {
-        return null;
+    public Boolean updateGoods(GoodsEntity entity) {
+
+        return updateByID(entity);
     }
 
 

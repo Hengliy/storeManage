@@ -2,6 +2,7 @@ package dao;
 
 import entity.GoodsEntity;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface GoodsDao {
@@ -14,7 +15,7 @@ public interface GoodsDao {
     /*根据id删除 */
     public Boolean deleteGoods(int id);
     /*条件搜索（保留实现）*/
-    public List<GoodsEntity>  searchGoodsBy(List<String> list);//[分类，厂家，开始时间，结束时间]
+    public List<GoodsEntity>  searchGoodsBy (HashMap<String,String> condition);//[分类，厂家，开始时间，结束时间,模糊匹配名称]
 
     public Boolean updateGoods(GoodsEntity entity);
 }

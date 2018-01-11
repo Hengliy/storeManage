@@ -142,39 +142,31 @@
                             <div class="am-btn-group am-btn-group-xs">
                                 <select name="kind" data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}" >
                                     <option value="1.0" selected="selected" >选择分类</option>
-                                    <option value="kind1">食品</option>
-                                    <option value="kind2">饮品</option>
-                                    <option value="kind3">学习用品</option>
-                                    <option value="kind4">生活用品</option>
+                                    <option value="食品">食品</option>
+                                    <option value="饮品">饮品</option>
+                                    <option value="学习用品">学习用品</option>
+                                    <option value="生活用品">生活用品</option>
                                 </select>
                             </div>
                         </li>
                         <li>
                             <div class="am-btn-group am-btn-group-xs">
-                                <select name="discount" data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}" >
+                                <select name="productor" data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}" >
                                     <option value="1.0" selected="selected" >厂家</option>
-                                    <option value="2.2">赛诺有限公司</option>
+                                    <option value="赛诺有限公司">赛诺有限公司</option>
                                 </select>
                             </div>
                         </li>
 
                         <li style="margin-right: 0;">
                             <span class="tubiao am-icon-calendar"></span>
-                            <input name="starttime" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
+                            <input name="start_time" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
                         </li>
                         <li style="margin-left: -4px;">
                             <span class="tubiao am-icon-calendar"></span>
-                            <input name="endtime" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
+                            <input name="end_time" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
                         </li>
 
-                        <li style="margin-left: -10px;">
-                            <div class="am-btn-group am-btn-group-xs">
-                                <select data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}">
-                                    <option value="b">产品分类</option>
-                                    <option value="o">下架</option>
-                                </select>
-                            </div>
-                        </li>
                         <li><input name="words" type="text" class="am-form-field am-input-sm am-input-xm" placeholder="关键词搜索" /></li>
                         <li><button type="submit" value="submit" class="am-btn am-radius am-btn-xs am-btn-success" style="margin-top: -1px;">搜索</button></li>
                     </ul>
@@ -228,7 +220,8 @@
                         <td>
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-                                    <a href='servlet/GoodsServlet?method=delete&deleteGoodsId=<%= goodsEntity.getId()%>'> <input type='button' class="am-btn am-btn-default am-btn-xs am-text-danger am-round am-icon-trash-o" value='删除'></a>
+                                    <a href='servlet/GoodsServlet?method=delete&deleteGoodsId=<%= goodsEntity.getId()%>'>
+                                        <input type='button' class="am-btn am-btn-default am-btn-xs am-text-danger am-round am-icon-trash-o" value='删除'></a>
                                 </div>
                             </div>
                         </td>

@@ -31,7 +31,6 @@
 <body>
 <jsp:include page="top.jsp"/>
 
-
 <div class="am-popup am-popup-inner" id="my-popup">
     <div class="am-popup-hd">
         <h4 class="am-popup-title">添加新会员</h4>
@@ -39,211 +38,72 @@
     </div>
     <div class="am-popup-bd">
 
-        <form class="am-form tjlanmu" action="servlet/AddGoodsServlet">
+        <form class="am-form tjlanmu" method="post" action="servlet/StaffServlet?method=add">
             <div class="am-form-group">
-                <div class="zuo">商品名称</div>
+                <div class="zuo">姓名</div>
                 <div class="you">
-                    <input name="name" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入标题">
+                    <input required="required" name="name" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="牙刷">
                 </div>
             </div>
 
             <div class="am-form-group">
-                <div class="zuo">品种</div>
+                <div class="zuo"></div>
                 <div class="you">
-                    <input name="kind" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入标题">
                 </div>
             </div>
 
             <div class="am-form-group">
-                <div class="zuo">厂家</div>
+                <div class="zuo">性别</div>
                 <div class="you">
-                    <input name="productor" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入标题">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <select name="sex" data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}" >
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                            <option value="保密">保密</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
             <div class="am-form-group">
-                <div class="zuo">进价</div>
+                <div class="zuo">生日</div>
                 <div class="you">
-                    <input name="inprice" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入标题">
+                    <li style="margin-left: -4px;">
+                        <span class="tubiao am-icon-calendar"></span>
+                        <input name="birth" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
+                    </li>
                 </div>
             </div>
 
             <div class="am-form-group">
-                <div class="zuo">售价</div>
+                <div class="zuo">密码</div>
                 <div class="you">
-                    <input name="outprice" type="email" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入标题">
+                    <input  required="required" name="password" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="赛诺有限公司">
                 </div>
             </div>
 
             <div class="am-form-group">
-                <div class="zuo">折扣</div>
+                <div class="zuo">电话</div>
                 <div class="you">
-                    <input name="dicount" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入标题">
+                    <input required="required" name="tel" type="text" class="am-input-sm" id="doc-ipt-email-1" placeholder="12.3">
                 </div>
             </div>
 
             <div class="am-form-group am-cf">
-                <div class="zuo">售价</div>
+                <div class="zuo">是否会员</div>
                 <div class="you" style="margin-top: 3px;">
                     <label class="am-checkbox-inline">
                         <input type="checkbox" value="option1">
-                        显示 </label>
+                        是 </label>
                     <label class="am-checkbox-inline">
                         <input type="checkbox" value="option2">
-                        隐藏 </label>
+                        否</label>
                 </div>
             </div>
             <div class="am-form-group am-cf">
                 <div class="you">
                     <p>
-                        <button type="submit" class="am-btn am-btn-success am-radius">提交</button>
-                    </p>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-
-<div class="am-popup am-popup-inner" id="my-popups">
-    <div class="am-popup-hd">
-        <h4 class="am-popup-title">详细库存信息（这里包含 销量 库存  损耗，  客服备注  销售的全部金额）</h4>
-        <span data-am-modal-close class="am-close">&times;</span> </div>
-    <div class="am-popup-bd">
-
-
-
-
-        <form class="am-form tjlanmu">
-            <div class="am-form-group am-cf">
-                <div class="zuo">销量：</div>
-                <div class="you">
-                    245234523452
-                </div>
-            </div>
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 库存：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 损耗：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 购买信息：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 销售金额：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 成本：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-            <div class="am-form-group am-cf">
-                <div class="zuo"> 利润：</div>
-                <div class="you">
-                    234523452
-                </div>
-            </div>
-
-        </form>
-    </div>
-</div>
-
-
-
-
-
-
-<div class="am-popup am-popup-inner" id="my-popupss">
-    <div class="am-popup-hd">
-        <h4 class="am-popup-title">复制栏目</h4>
-        <span data-am-modal-close class="am-close">&times;</span> </div>
-    <div class="am-popup-bd">
-        <form class="am-form tjlanmu">
-
-
-            <div class="am-form-group">
-                <div class="zuo">复制到：</div>
-                <div class="you">
-
-                    <select data-am-selected="{btnWidth: 200, btnSize: 'sm', btnStyle: 'danger'}">
-                        <option value="a">Apple</option>
-                        <option value="b">Banana</option>
-                        <option value="o">Orange</option>
-                        <option value="m">Mango</option>
-                    </select>
-                    顶级栏目选默认
-
-                </div>
-            </div>
-
-
-            <div class="am-form-group">
-                <div class="zuo">新栏目名称：</div>
-                <div class="you">
-                    <input type="email" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入标题">
-                </div>
-            </div>
-            <div class="am-form-group">
-                <div class="zuo">栏目关键词：</div>
-                <div class="you">
-                    <input type="password" class="am-input-sm" id="doc-ipt-pwd-1" placeholder="请输入关键词">
-                </div>
-            </div>
-            <div class="am-form-group am-cf">
-                <div class="zuo">栏目描述：</div>
-                <div class="you">
-                    <textarea class="" rows="2" id="doc-ta-1"></textarea>
-                </div>
-            </div>
-            <div class="am-form-group am-cf">
-                <div class="zuo">栏目图片：</div>
-                <div class="you" style="height: 45px;">
-                    <input type="file" id="doc-ipt-file-1">
-                    <p class="am-form-help">请选择要上传的文件...</p>
-                </div>
-            </div>
-            <div class="am-form-group am-cf">
-                <div class="zuo">简介：</div>
-                <div class="you">
-                    <textarea class="" rows="2" id="doc-ta-1"></textarea>
-                </div>
-            </div>
-            <div class="am-form-group am-cf">
-                <div class="zuo">状态：</div>
-                <div class="you" style="margin-top: 3px;">
-                    <label class="am-checkbox-inline">
-                        <input type="checkbox" value="option1">
-                        显示 </label>
-                    <label class="am-checkbox-inline">
-                        <input type="checkbox" value="option2">
-                        隐藏 </label>
-                </div>
-            </div>
-            <div class="am-form-group am-cf">
-                <div class="you">
-                    <p>
-                        <button type="submit" class="am-btn am-btn-success am-radius">提交</button>
+                        <button type="submit" value="submit" class="am-btn am-btn-success am-radius">提交</button>
                     </p>
                 </div>
             </div>

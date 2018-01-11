@@ -1,20 +1,10 @@
 package hibernate;
 
-import java.util.Collection;
-import java.io.Serializable;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.lang.reflect.Field;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
+import java.sql.Timestamp;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -24,6 +14,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.query.NativeQuery;
@@ -39,7 +30,7 @@ public class BaseDaoImpl{
      */
     public BaseDaoImpl() {
         //实例化sessionFactory
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        // SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         System.out.print("$$$$$$$$$$$$$$$$$$$");
     }
 
@@ -126,6 +117,50 @@ public class BaseDaoImpl{
             }
         }
         return flag;
+    }
+
+    public List<?> searchByWhat(HashMap<String,String> condition,Class entity)
+    {
+        List<?> list = null;
+        Iterator iter = condition.entrySet().iterator();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        boolean flag = false;
+        try{
+            transaction=session.beginTransaction();
+            Criteria criteria = session.createCriteria(entity);
+            for (Entry<String, String> entry : condition.entrySet()) {
+                String column  = entry.getKey();
+                String value = entry.getValue();
+                if(column.equals("name") || column.equals("goodsName") )
+                {
+                    criteria.add(Restrictions.like(column,value, MatchMode.ANYWHERE));
+                }
+                else if(column.equals("breakdate" )|| column.equals("outdate") || column.equals("indate"))
+                {
+                    String startTime = value.split(";")[0] + " 00:00:00";
+                    System.out.println(startTime);
+                    String endTime = value.split(";")[1] + " 23:59:59";
+                    System.out.println(endTime);
+                    criteria.add(Restrictions.between(column,Timestamp.valueOf(startTime), Timestamp.valueOf(endTime)));
+                }
+                else
+                {
+                    criteria.add(Restrictions.eq(column, value));
+                }
+            }
+            list = criteria.list();
+            transaction.commit();
+            flag = true;
+        }catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+            flag = false;
+        }finally {
+            if(session!=null){
+                session.close();
+            }
+        }
+        return list;
     }
 
     /**

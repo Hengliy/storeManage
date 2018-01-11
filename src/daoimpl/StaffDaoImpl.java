@@ -7,6 +7,7 @@ import hibernate.BaseDaoImpl;
 import java.util.List;
 
 public class StaffDaoImpl extends BaseDaoImpl implements StaffDao {
+
     @Override
     public List<StaffEntity> getAllStaff() {
         return (List<StaffEntity>) getAllData("staff",StaffEntity.class);
