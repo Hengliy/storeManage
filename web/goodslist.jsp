@@ -141,8 +141,8 @@
                         <li>
                             <div class="am-btn-group am-btn-group-xs">
                                 <select name="kind" data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}" >
-                                    <option value="1.0" selected="selected" >选择分类</option>
-                                    <option value="食品">食品</option>
+                                    <option value="" selected="selected" >选择分类</option>
+                                    <option value="食物">食物</option>
                                     <option value="饮品">饮品</option>
                                     <option value="学习用品">学习用品</option>
                                     <option value="生活用品">生活用品</option>
@@ -152,23 +152,25 @@
                         <li>
                             <div class="am-btn-group am-btn-group-xs">
                                 <select name="productor" data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}" >
-                                    <option value="1.0" selected="selected" >厂家</option>
+                                    <option value="" selected="selected" >厂家</option>
                                     <option value="赛诺有限公司">赛诺有限公司</option>
+                                    <option value="建和有限公司">建和有限公司</option>
+                                    <option value="九鼎有限公司">九鼎有限公司</option>
+                                    <option value="洲际有限公司">洲际有限公司</option>
+                                    <option value="花城有限公司">花城有限公司</option>
+                                    <option value="九恒有限公司">九恒有限公司</option>
+                                    <option value="建和有限公司">建和有限公司</option>
+                                    <option value="安琪有限公司">安琪有限公司</option>
+                                    <option value="新天有限公司">新天有限公司</option>
+                                    <option value="聚商有限公司">聚商有限公司</option>
+
                                 </select>
                             </div>
                         </li>
 
-                        <li style="margin-right: 0;">
-                            <span class="tubiao am-icon-calendar"></span>
-                            <input name="starttime" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
-                        </li>
-                        <li style="margin-left: -4px;">
-                            <span class="tubiao am-icon-calendar"></span>
-                            <input name="endtime" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
-                        </li>
-
                         <li><input name="words" type="text" class="am-form-field am-input-sm am-input-xm" placeholder="关键词搜索" /></li>
                         <li><button type="submit" value="submit" class="am-btn am-radius am-btn-xs am-btn-success" style="margin-top: -1px;">搜索</button></li>
+
                     </ul>
                 </div>
             </from>

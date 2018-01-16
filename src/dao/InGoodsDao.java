@@ -4,6 +4,7 @@ import entity.GoodsEntity;
 import entity.IngoodsEntity;
 import entity.VIngoodsEntity;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface InGoodsDao {
@@ -11,4 +12,6 @@ public interface InGoodsDao {
     public List<VIngoodsEntity> getAllVInGoods();
     /*插入一条新数据*/
     public Boolean insertIngoods(IngoodsEntity ingoodsEntity);
+
+    public List<VIngoodsEntity>  searchGoodsBy (HashMap<String,String> condition);
 }

@@ -101,4 +101,15 @@ public class OutgoodsEntity {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "OutgoodsEntity{" +
+                "id=" + id +
+                ", num='" + num + '\'' +
+                ", goodsName='" + goodsName + '\'' +
+                ", count=" + count +
+                ", outdate=" + outdate +
+                ", staffId=" + staffId +
+                '}';
+    }
 }

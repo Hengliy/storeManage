@@ -108,31 +108,28 @@ public class GoodsServlet extends HttpServlet {
             GoodsDao dao = new GoodsDaoImpl();
 
             // map.put("name",request.getParameter("words"));
-             map.put("kind_name",request.getParameter("kind"));
-            map.put("productor_name",request.getParameter("productor"));
-
-
-            //GoodsDao dao=new GoodsDaoImpl();
-           // HashMap<String,String> map =new HashMap<String, String>();
-
-           // String kind_name="食物";
-//            String iso = new String(kind_name.getBytes("UTF-8"),"ISO-8859-1");
-//            String utf8 = new String(iso.getBytes("ISO-8859-1"),"UTF-8");
-           // if(kind_name!= null )
-             // map.put("name","小熊饼干");
+            if(!request.getParameter("kind").equals(""))   map.put("kind_name",request.getParameter("kind"));
+            if(!request.getParameter("productor").equals("")) map.put("productor_name",request.getParameter("productor"));
+            if(!request.getParameter("words").equals("")) {
+                System.out.println(request.getParameter("words"));
+                map.put("name",request.getParameter("words"));
+            }
+//            map.put("kind_name","食物");
+//            map.put("productor_name","赛诺有限公司");
 
             List<GoodsEntity> allGoodsList= dao.searchGoodsBy(map);
 
-            if(allGoodsList!=null)
+            if(!allGoodsList.isEmpty())
                 for(GoodsEntity goodsEntity:allGoodsList)
                 {
                     System.out.println(goodsEntity);
                 }
-
+            else{
+                System.out.println("&& nothing searched &&");
+            }
             request.getSession().invalidate();
             request.getSession().setAttribute("allGoodsList", allGoodsList);
-            response.sendRedirect("/servlet/GoodsServlet?method=getall");//需要用重定向  这样地址栏不变
-
+            response.sendRedirect("/goodslist.jsp");//需要用重定向  这样地址栏不变
         }
     }
 

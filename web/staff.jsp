@@ -127,52 +127,6 @@
     </div>
 
 
-    <from action="servlet/SearchGoodsServlet" >
-        <div class="am-btn-toolbars am-btn-toolbar am-kg am-cf">
-            <ul>
-                <li>
-                    <div class="am-btn-group am-btn-group-xs">
-                        <select name="kind" data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}" >
-                            <option value="kind1">会员1</option>
-                            <option value="kind2">会员2</option>
-                            <option value="kind3">会员3</option>
-                            <option value="kind4">会员4</option>
-                        </select>
-                    </div>
-                </li>
-                <li>
-                    <div class="am-btn-group am-btn-group-xs">
-                        <select name="discount" data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}" >
-                            <option value="1.0">1折</option>
-                            <option value="2.2">2折</option>
-                        </select>
-                    </div>
-                </li>
-
-                <li style="margin-right: 0;">
-                    <span class="tubiao am-icon-calendar"></span>
-                    <input name="starttime" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
-                </li>
-                <li style="margin-left: -4px;">
-                    <span class="tubiao am-icon-calendar"></span>
-                    <input name="endtime" type="text" class="am-form-field am-input-sm am-input-zm  am-icon-calendar" placeholder="开始日期" data-am-datepicker="{theme: 'success',}"  readonly/>
-                </li>
-
-                <li style="margin-left: -10px;">
-                    <div class="am-btn-group am-btn-group-xs">
-                        <select data-am-selected="{btnWidth: 90, btnSize: 'sm', btnStyle: 'default'}">
-                            <option value="b">产品分类</option>
-                            <option value="o">下架</option>
-                        </select>
-                    </div>
-                </li>
-                <li><input name="words" type="text" class="am-form-field am-input-sm am-input-xm" placeholder="关键词搜索" /></li>
-                <li><button type="button" class="am-btn am-radius am-btn-xs am-btn-success" style="margin-top: -1px;">搜索</button></li>
-            </ul>
-        </div>
-    </from>
-
-
     <form class="am-form am-g">
         <table width="100%" class="am-table am-table-bordered am-table-radius am-table-striped">
             <thead>

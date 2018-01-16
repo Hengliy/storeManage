@@ -3,7 +3,6 @@ package hibernate;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.sql.Timestamp;
 
@@ -31,7 +30,7 @@ public class BaseDaoImpl{
      */
     public BaseDaoImpl() {
         //实例化sessionFactory
-        // SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+     //   SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         System.out.print("$$$$$$$$$$$$$$$$$$$");
     }
 
@@ -39,6 +38,7 @@ public class BaseDaoImpl{
     {
         List<?> list = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
+        //Session session = new Configuration().configure().buildSessionFactory().openSession();
         try{
             transaction=session.beginTransaction();
 
@@ -122,13 +122,6 @@ public class BaseDaoImpl{
 
     public List<?> searchByWhat(HashMap<String,String> condition,Class entity)
     {
-
-        Iterator iter1 = condition.entrySet().iterator();
-        while (iter1.hasNext()) {
-            Map.Entry entry = (Map.Entry) iter1.next();
-            System.out.println(entry.getKey()+"  "+entry.getValue());
-        }
-
         List<?> list = null;
         Iterator iter = condition.entrySet().iterator();
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -153,8 +146,8 @@ public class BaseDaoImpl{
                 }
                 else
                 {
-                    //criteria.add(Restrictions.eq(column, value));
-                    criteria.add( Restrictions.sqlRestriction(column + "=" + value));
+                //    criteria.add(Restrictions.eq(column, value));
+                    criteria.add(Restrictions.sqlRestriction(column + "='" + value + "'"));
                 }
             }
             list = criteria.list();

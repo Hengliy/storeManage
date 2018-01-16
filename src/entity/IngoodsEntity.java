@@ -115,4 +115,16 @@ public class IngoodsEntity {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "IngoodsEntity{" +
+                "id=" + id +
+                ", goodsName='" + goodsName + '\'' +
+                ", inprice=" + inprice +
+                ", oldInprice=" + oldInprice +
+                ", count=" + count +
+                ", indate=" + indate +
+                ", staffId=" + staffId +
+                '}';
+    }
 }

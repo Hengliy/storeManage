@@ -1,6 +1,7 @@
 package servlet;
 
 import dao.GoodsDao;
+import dao.InGoodsDao;
 import dao.OutGoodsDao;
 import daoimpl.GoodsDaoImpl;
 import daoimpl.InGoodsDaoImpl;
@@ -20,6 +21,7 @@ import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -32,7 +34,7 @@ public class OutGoodsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("***********doPost ingoods_servlet*********************");
+        System.out.println("***********doPost outgoods_servlet*********************");
 
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
@@ -80,6 +82,50 @@ public class OutGoodsServlet extends HttpServlet {
                 System.out.println("failure");
                 response.sendRedirect("OutGoodsServlet?method=getall");//需要用重定向  这样地址栏不变
             }
+        }else if(method.equals("search"))
+        {
+            System.out.println("Search Goods");
+
+            //System.out.println(request.getParameter("start_time")+"   "+request.getParameter("start_time"));
+            System.out.println(request.getParameter("words"));
+            System.out.println(request.getParameter("kind")+"   "+request.getParameter("productor"));
+
+            HashMap<String,String> map =new HashMap<String, String>() ;
+
+            // map.put("name",request.getParameter("words"));
+            if(!request.getParameter("kind").equals(""))   map.put("kind_name",request.getParameter("kind"));
+            if(!request.getParameter("productor").equals("")) map.put("productor_name",request.getParameter("productor"));
+
+            String date="";
+            if(!request.getParameter("startdate").equals(""))
+            {
+                date+=request.getParameter("startdate");
+                System.out.println(date);//map.put("productor_name",request.getParameter("productor"));
+            }
+            if(!request.getParameter("enddate").equals(""))
+            {
+                date+=";"+request.getParameter("enddate");
+                map.put("outdate",date);
+                System.out.println(date);
+            }
+//            map.put("kind_name","食物");
+//            map.put("productor_name","赛诺有限公司");
+
+            OutGoodsDao dao = new OutGoodsDaoImpl();
+
+            List<VOutgoodsEntity> allVOutGoodsList= dao.searchGoodsBy(map);
+
+            if(!allVOutGoodsList.isEmpty())
+                for(VOutgoodsEntity vOutgoodsEntity:allVOutGoodsList)
+                {
+                    System.out.println("outgooods   "+vOutgoodsEntity);
+                }
+            else{
+                System.out.println("&& nothing searched &&");
+            }
+            request.getSession().invalidate();
+            request.getSession().setAttribute("allVInGoodsList", allVOutGoodsList);
+            response.sendRedirect("/outgoods.jsp");//需要用重定向  这样地址栏不变
         }
     }
 

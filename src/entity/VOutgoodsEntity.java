@@ -127,4 +127,18 @@ public class VOutgoodsEntity {
         result = 31 * result + (username != null ? username.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "VOutgoodsEntity{" +
+                "id=" + id +
+                ", num='" + num + '\'' +
+                ", goodsName='" + goodsName + '\'' +
+                ", kindName='" + kindName + '\'' +
+                ", productorName='" + productorName + '\'' +
+                ", count=" + count +
+                ", outdate=" + outdate +
+                ", username='" + username + '\'' +
+                '}';
+    }
 }

@@ -128,4 +128,18 @@ public class VIngoodsEntity {
         result = 31 * result + (username != null ? username.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "VIngoodsEntity{" +
+                "id=" + id +
+                ", goodsName='" + goodsName + '\'' +
+                ", kindName='" + kindName + '\'' +
+                ", productorName='" + productorName + '\'' +
+                ", count=" + count +
+                ", inprice=" + inprice +
+                ", indate=" + indate +
+                ", username='" + username + '\'' +
+                '}';
+    }
 }
