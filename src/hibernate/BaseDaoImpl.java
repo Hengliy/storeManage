@@ -146,7 +146,6 @@ public class BaseDaoImpl{
                 }
                 else
                 {
-                //    criteria.add(Restrictions.eq(column, value));
                     criteria.add(Restrictions.sqlRestriction(column + "='" + value + "'"));
                 }
             }
